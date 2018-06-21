@@ -37,7 +37,8 @@ echo $CF_SPACE
 echo $CF_USERNAME
 echo $CF_PASSWORD
 
-sudo cf api $CF_api
+sudo cf api $CF_API
+
 sudo cf login -u $CF_USERNAME -p $CF_PASSWORD -o $CF_ORG -s $CF_SPACE
 
 #CF Deploy the built MTAR file
