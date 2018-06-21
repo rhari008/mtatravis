@@ -25,6 +25,8 @@ ls
 
 wget "https://tools.hana.ondemand.com/additional/cfcliplugin/cf-cli-mta-plugin-2.0.3-linux-x86_64.bin" -o "mtaplugin.bin"
 
+ls 
+
 chmod a+x mtaplugin.bin
 
-sudo ./mtaplugin.bin
+sudo mtaplugin.bin
