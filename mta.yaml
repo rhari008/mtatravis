@@ -1,0 +1,26 @@
+ID: SampleHTML
+_schema-version: '2.1'
+version: 0.0.1
+
+modules:
+ - name: UI5Module
+   type: html5
+   path: UI5Module
+   parameters:
+      disk-quota: 256M
+      memory: 256M
+   build-parameters:
+      builder: grunt
+   requires:
+    - name: Northwind
+      group: destinations
+      properties:
+         forwardAuthToken: true
+         strictSSL: false
+         name: Northwind
+         url: ~{url}
+
+resources:
+ - name: Northwind
+   properties:
+      url: http://services.odata.org
