@@ -1,5 +1,5 @@
-[main] INFO com.sap.di.ext.mta.cli.CliExecutor - arguments: [--build-target=CF, --mtar=test.mtar, build]
-[main] INFO com.sap.di.ext.mta.cli.CliExecutor - Archive path is /Users/i048564/Documents/Eclipse/workspace/MTASampleHTML/test.mtar
+[main] INFO com.sap.di.ext.mta.cli.CliExecutor - arguments: [--build-target=CF, build]
+[main] INFO com.sap.di.ext.mta.cli.CliExecutor - Archive path is /Users/i048564/Documents/Eclipse/workspace/MTASampleHTML/MTASampleHTML.mtar
 [main] DEBUG com.sap.di.ext.mta.cli.CliBuildExecutor - Starting MTA build
 [main] INFO com.sap.di.beans.DynamicBeans - Created implementation class com.sap.di.ext.mta.dto.DesignDescriptor$$impl0 for bean interface com.sap.di.ext.mta.dto.DesignDescriptor
 [main] INFO com.sap.di.beans.DynamicBeans - Created implementation class com.sap.di.ext.mta.dto.DesignModule$$impl1 for bean interface com.sap.di.ext.mta.dto.DesignModule
@@ -13,12 +13,14 @@
 [pool-1-thread-1] INFO com.sap.di.ext.mta.proc.ProcessingRun - Verifying MTA SampleHTML: started symbol resource[Northwind]
 [pool-1-thread-1] INFO com.sap.di.ext.mta.proc.ProcessingRun - Verifying MTA SampleHTML: finished symbol resource[Northwind]
 [pool-1-thread-2] DEBUG com.sap.di.ext.mta.cli.CommandHelper - Module 'UI5Module': command timeout is 300 seconds
-[pool-1-thread-2] DEBUG com.sap.di.ext.mta.cli.CommandHelper - Module 'UI5Module': command output file is /Users/i048564/Documents/Eclipse/workspace/MTASampleHTML/.mta/modulebuild3040300776906203292.txt
+[pool-1-thread-2] DEBUG com.sap.di.ext.mta.cli.CommandHelper - Module 'UI5Module': command output file is /Users/i048564/Documents/Eclipse/workspace/MTASampleHTML/.mta/modulebuild3643209157375667936.txt
 [pool-1-thread-2] DEBUG com.sap.di.ext.mta.cli.CommandHelper - Module 'UI5Module': invoking command [npm, install]
-[pool-1-thread-2] DEBUG com.sap.di.ext.mta.cli.CommandHelper - Module 'UI5Module': command exit value 1
+[pool-1-thread-2] DEBUG com.sap.di.ext.mta.cli.CommandHelper - Module 'UI5Module': command timeout is 300 seconds
+[pool-1-thread-2] DEBUG com.sap.di.ext.mta.cli.CommandHelper - Module 'UI5Module': command output file is /Users/i048564/Documents/Eclipse/workspace/MTASampleHTML/.mta/modulebuild6542208540869327775.txt
+[pool-1-thread-2] DEBUG com.sap.di.ext.mta.cli.CommandHelper - Module 'UI5Module': invoking command [grunt]
 [pool-1-thread-2] INFO com.sap.di.ext.mta.proc.ProcessingRun - Verifying MTA SampleHTML: finished symbol module[UI5Module]
-[main] ERROR com.sap.di.ext.mta.cli.CliExecutor - Failed to build module "UI5Module". Command execution failed with exit code 1
-com.sap.di.ext.mta.proc.MtaProcessingException: Failed to build module "UI5Module". Command execution failed with exit code 1
+[main] ERROR com.sap.di.ext.mta.cli.CliExecutor - Failed to build module "UI5Module". Command execution failed
+com.sap.di.ext.mta.proc.MtaProcessingException: Failed to build module "UI5Module". Command execution failed
 	at com.sap.di.ext.mta.proc.ProcessingRun.consumeNextVerificationResult(ProcessingRun.java:279)
 	at com.sap.di.ext.mta.proc.ProcessingRun.verifySymbols(ProcessingRun.java:236)
 	at com.sap.di.ext.mta.proc.ProcessingRun.execute(ProcessingRun.java:91)
@@ -32,7 +34,7 @@ com.sap.di.ext.mta.proc.MtaProcessingException: Failed to build module "UI5Modul
 	at java.lang.reflect.Method.invoke(Method.java:498)
 	at com.sap.di.ext.mta.cli.MtaMain.doMain(MtaMain.java:95)
 	at com.sap.di.ext.mta.cli.MtaMain.main(MtaMain.java:36)
-Caused by: com.sap.di.ext.mta.cli.CliException: Failed to build module "UI5Module". Command execution failed with exit code 1
+Caused by: com.sap.di.ext.mta.cli.CliException: Failed to build module "UI5Module". Command execution failed
 	at com.sap.di.ext.mta.cli.CliProcessingHelper.verifyModule(CliProcessingHelper.java:56)
 	at com.sap.di.ext.mta.cli.CliBuildExecutor$ProcHelperAnchor.verifyModule(CliBuildExecutor.java:152)
 	at com.sap.di.ext.mta.proc.ModuleHandler$1.call(ModuleHandler.java:171)
@@ -42,8 +44,19 @@ Caused by: com.sap.di.ext.mta.cli.CliException: Failed to build module "UI5Modul
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:748)
-Caused by: com.sap.di.ext.mta.cli.CliException: Command execution failed with exit code 1
-	at com.sap.di.ext.mta.cli.CommandHelper.executeBuild(CommandHelper.java:103)
-	at com.sap.di.ext.mta.cli.builder.GruntBuilder.build(GruntBuilder.java:56)
+Caused by: com.sap.di.ext.mta.cli.CliException: Command execution failed
+	at com.sap.di.ext.mta.cli.CommandHelper.executeBuild(CommandHelper.java:77)
+	at com.sap.di.ext.mta.cli.builder.GruntBuilder.build(GruntBuilder.java:63)
 	at com.sap.di.ext.mta.cli.CliProcessingHelper.verifyModule(CliProcessingHelper.java:54)
 	... 8 more
+Caused by: java.io.IOException: Cannot run program "grunt" (in directory "/Users/i048564/Documents/Eclipse/workspace/MTASampleHTML/UI5Module"): error=2, No such file or directory
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1048)
+	at com.sap.di.ext.mta.cli.CommandHelper$ProcessFactory.startProcess(CommandHelper.java:112)
+	at com.sap.di.ext.mta.cli.CommandHelper.executeBuild(CommandHelper.java:75)
+	... 10 more
+Caused by: java.io.IOException: error=2, No such file or directory
+	at java.lang.UNIXProcess.forkAndExec(Native Method)
+	at java.lang.UNIXProcess.<init>(UNIXProcess.java:247)
+	at java.lang.ProcessImpl.start(ProcessImpl.java:134)
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1029)
+	... 12 more

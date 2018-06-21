@@ -18,16 +18,6 @@ sudo cf install-plugin ./lib/mtaplugin.bin -f
 
 sudo cf plugins
 
-# SAP MTAR Builder installation - Check SAP Cloud Tools for latest build - https://tools.hana.ondemand.com/additional/mta_archive_builder-1.1.0.jar 
-
-echo "********* MTA Archive builder downloaded *********"
-
-java -jar lib/mta_archive_builder-1.1.0.jar --build-target=CF --mtar=samplehtml.mtar build
-
-echo "********* MTA Build done *********"
-
-echo "********* Ready to perform deployment *********"
-
 # CF login
 sudo chmod 777 /home/travis/.cf/config.json  # Fix for the CF read
 
@@ -41,7 +31,7 @@ sudo cf api $CF_API
 
 sudo cf login -u $CF_USERNAME -p $CF_PASSWORD -o $CF_ORG -s $CF_SPACE
 
-#CF Deploy the built MTAR file
+# CF deploy
+sudo ./cf_mta_deploy
 
-sudo cf deploy samplehtml.mtar
-
+# CF Performing Blue green deployment
