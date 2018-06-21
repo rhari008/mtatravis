@@ -30,5 +30,3 @@ java -version
 echo "********* MTA Archive builder downloaded *********"
 
 java -jar mta_archive_builder-1.1.0.jar --build-target=CF --mtar=samplehtml.mtar build
-
-vi /home/travis/.npm/_logs/2018-06-21T04_45_38_844Z-debug.log
