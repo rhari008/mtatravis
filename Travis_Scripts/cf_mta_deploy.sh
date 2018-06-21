@@ -13,7 +13,7 @@ echo "********* MTA Archive builder downloaded *********"
 
 CURRENTPATH=$(pwd)
 
-java -jar $SCURRENTPATH/MTASampleHTML/lib/mta_archive_builder-1.1.0.jar --build-target=CF --mtar=samplehtml.mtar build
+java -jar $CURRENTPATH/MTASampleHTML/lib/mta_archive_builder-1.1.0.jar --build-target=CF --mtar=samplehtml.mtar build
 
 echo "********* MTA Build done *********"
 
