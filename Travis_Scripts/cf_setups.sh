@@ -15,18 +15,16 @@ echo "********* Installation of Cloud Foundry Command Line Interface completed *
 
 # SAP MTAR Builder installation - Check SAP Cloud Tools for latest build - https://tools.hana.ondemand.com/additional/mta_archive_builder-1.1.0.jar 
 
-ls 
-
-echo "Downgrade node version"
-
-node --version
-
-npm -v
-
-echo "Java version"
-
-java -version
-
 echo "********* MTA Archive builder downloaded *********"
 
 java -jar mta_archive_builder-1.1.0.jar --build-target=CF --mtar=samplehtml.mtar build
+
+echo "********* MTA Build done *********"
+
+ls
+
+wget "https://tools.hana.ondemand.com/additional/cfcliplugin/cf-cli-mta-plugin-2.0.3-linux-x86_64.bin"
+
+chmod a+x cf-cli-mta-plugin-2.0.3-linux-x86_64.bin
+
+sudo ./cf-cli-mta-plugin-2.0.3-linux-x86_64.bin
