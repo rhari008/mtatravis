@@ -29,6 +29,13 @@ echo "********* MTA Build done *********"
 echo "********* Ready to perform deployment *********"
 
 # CF login
+
+echo $CF_API 
+echo $CF_ORG
+echo $CF_SPACE
+echo $CF_USERNAME
+echo $CF_PASSWORD
+
 cf api $CF_api
 cf login -u $CF_USERNAME -p $CF_PASSWORD -o $CF_ORG -s $CF_SPACE
 
