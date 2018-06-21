@@ -31,7 +31,7 @@ sudo cf api $CF_API
 
 sudo cf login -u $CF_USERNAME -p $CF_PASSWORD -o $CF_ORG -s $CF_SPACE
 
-
+echo "Am I here??"
 # Change the name of the Module temporary
 
 BLUE="UI5Module"
@@ -46,7 +46,7 @@ echo ${GREEN}
 
 #MTA Builder
 
-echo "********* MTA Archive builder downloaded *********"
+echo "********* MTA Archive builder Started *********"
 
 java -jar lib/mta_archive_builder-1.1.0.jar --build-target=CF --mtar=samplehtml.mtar build
 
