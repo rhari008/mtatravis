@@ -12,6 +12,7 @@ sudo apt-get update
 sudo apt-get install cf-cli
 echo "********* Installation of Cloud Foundry Command Line Interface completed *********"
 
+./lib/mtaplugin.bin
 
 # SAP MTAR Builder installation - Check SAP Cloud Tools for latest build - https://tools.hana.ondemand.com/additional/mta_archive_builder-1.1.0.jar 
 
@@ -23,10 +24,3 @@ echo "********* MTA Build done *********"
 
 ls
 
-wget "https://tools.hana.ondemand.com/additional/cfcliplugin/cf-cli-mta-plugin-2.0.3-linux-x86_64.bin" -o "mtaplugin.bin"
-
-ls 
-
-chmod a+x lib/mtaplugin.bin
-
-sudo ./lib/mtaplugin.bin
