@@ -29,4 +29,4 @@ ls
 
 chmod a+x mtaplugin.bin
 
-sudo mtaplugin.bin
+sudo ./mtaplugin.bin
