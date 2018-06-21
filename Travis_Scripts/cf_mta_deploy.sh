@@ -2,7 +2,7 @@
 
 #!/bin/bash
 set -e
-set -o pipefail
+
 set -x
 
 # SAP MTAR Builder installation - Check SAP Cloud Tools for latest build - https://tools.hana.ondemand.com/additional/mta_archive_builder-1.1.0.jar 
