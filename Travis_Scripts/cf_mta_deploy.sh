@@ -10,9 +10,10 @@ set -x
 echo "********* MTA Archive builder downloaded *********"
 
 pwd
-ls ../lib
+ls
+ls MTASampleHTML/lib
 
-java -jar ../lib/mta_archive_builder-1.1.0.jar --build-target=CF --mtar=samplehtml.mtar build
+java -jar MTASampleHTML/lib/mta_archive_builder-1.1.0.jar --build-target=CF --mtar=samplehtml.mtar build
 
 echo "********* MTA Build done *********"
 
