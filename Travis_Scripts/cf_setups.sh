@@ -12,8 +12,9 @@ sudo apt-get update
 sudo apt-get install cf-cli
 echo "********* Installation of Cloud Foundry Command Line Interface completed *********"
 
-wget "https://tools.hana.ondemand.com/additional/cfcliplugin/cf-cli-mta-plugin-2.0.3-linux-x86_64.bin"
-sudo cf install-plugin ./cf-cli-mta-plugin-2.0.3-linux-x86_64.bin -f
+# Install plugins
+
+sudo cf install-plugin ./lib/mtaplugin.bin -f
 
 sudo cf plugins
 
@@ -25,5 +26,13 @@ java -jar lib/mta_archive_builder-1.1.0.jar --build-target=CF --mtar=samplehtml.
 
 echo "********* MTA Build done *********"
 
-ls
+echo "********* Ready to perform deployment *********"
+
+# CF login
+cf api $CF_api
+cf login -u $CF_USERNAME -p $CF_PASSWORD -o $CF_ORG -s $CF_SPACE
+
+#CF Deploy the built MTAR file
+
+cf deploy samplehtml.mtar
 
