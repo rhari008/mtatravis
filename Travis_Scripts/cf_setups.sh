@@ -12,8 +12,8 @@ sudo apt-get update
 sudo apt-get install cf-cli
 echo "********* Installation of Cloud Foundry Command Line Interface completed *********"
 
-wget "https://tools.hana.ondemand.com/additional/cfcliplugin/cf-cli-mta-plugin-2.0.3-linux-x86_64.bin" -o mtaplugin.bin
-sudo cf install-plugin ./mtaplugin.bin -f
+wget "https://tools.hana.ondemand.com/additional/cfcliplugin/cf-cli-mta-plugin-2.0.3-linux-x86_64.bin"
+sudo cf install-plugin ./cf-cli-mta-plugin-2.0.3-linux-x86_64.bin -f
 
 sudo cf plugins
 
