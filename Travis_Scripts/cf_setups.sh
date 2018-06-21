@@ -35,6 +35,31 @@ sudo cf api $CF_API
 
 sudo cf login -u $CF_USERNAME -p $CF_PASSWORD -o $CF_ORG -s $CF_SPACE
 
+if [ 1 -eq 0 ] then
+    #MTA Builder
+
+    echo "********* MTA Archive builder downloaded *********"
+
+    java -jar lib/mta_archive_builder-1.1.0.jar --build-target=CF --mtar=samplehtml.mtar build
+
+    echo "********* MTA Build done *********"
+
+    echo "********* Ready to perform deployment *********"
+
+    #CF Deploy the built MTAR file
+
+    sudo cf deploy samplehtml.mtar
+
+fi
+
+# Change the name of the Module temporary
+
+BLUE=UI5Module
+
+GREEN="${BLUE}-B"
+
+sudo sed -i -e "s/: ${BLUE}/: ${GREEN}/g" UI5Module/package.json
+
 #MTA Builder
 
 echo "********* MTA Archive builder downloaded *********"
@@ -47,7 +72,4 @@ echo "********* Ready to perform deployment *********"
 
 #CF Deploy the built MTAR file
 
-
 sudo cf deploy samplehtml.mtar
-
-
