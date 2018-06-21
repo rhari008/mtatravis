@@ -21,6 +21,8 @@ ls
 
 echo "Java version"
 
+java -version
+
 echo "********* MTA Archive builder downloaded *********"
 
-java -jar mta.jar --build-target=CF --mtar=samplehtml.mtar build
+java -jar mta_archive_builder-1.1.0.jar --build-target=CF --mtar=samplehtml.mtar build
