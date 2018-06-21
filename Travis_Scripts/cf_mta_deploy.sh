@@ -15,7 +15,7 @@ CURRENTPATH=$(pwd)
 
 ls $CURRENTPATH
 
-java -jar $CURRENTPATH/MTASampleHTML/lib/mta_archive_builder-1.1.0.jar --build-target=CF --mtar=samplehtml.mtar build
+java -jar $CURRENTPATH/lib/mta_archive_builder-1.1.0.jar --build-target=CF --mtar=samplehtml.mtar build
 
 echo "********* MTA Build done *********"
 
