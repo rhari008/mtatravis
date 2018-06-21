@@ -17,7 +17,7 @@ echo "********* Installation of Cloud Foundry Command Line Interface completed *
 
 echo "********* MTA Archive builder downloaded *********"
 
-java -jar mta_archive_builder-1.1.0.jar --build-target=CF --mtar=samplehtml.mtar build
+java -jar lib/mta_archive_builder-1.1.0.jar --build-target=CF --mtar=samplehtml.mtar build
 
 echo "********* MTA Build done *********"
 
@@ -27,6 +27,6 @@ wget "https://tools.hana.ondemand.com/additional/cfcliplugin/cf-cli-mta-plugin-2
 
 ls 
 
-chmod a+x mtaplugin.bin
+chmod a+x lib/mtaplugin.bin
 
-sudo ./mtaplugin.bin
+sudo ./lib/mtaplugin.bin
