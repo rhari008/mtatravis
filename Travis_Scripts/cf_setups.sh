@@ -38,7 +38,7 @@ sudo cf login -u $CF_USERNAME -p $CF_PASSWORD -o $CF_ORG -s $CF_SPACE
 
 # Change the name of the Module temporary
 
-BLUE=UI5Module
+BLUE="UI5Module"
 
 GREEN="${BLUE}-G"
 
