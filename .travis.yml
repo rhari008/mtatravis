@@ -8,5 +8,11 @@ before_install:
   - sudo apt-get -qq install g++-4.8
 sudo: required
 env:
-  - CXX=g++-4.8
+   global:
+   - CXX=g++-4.8
+   - CF_API=$CF_API  
+   - CF_USERNAME=$CF_USERNAME
+   - CF_PASSWORD=$CF_PASSWORD
+   - CF_ORG=$CF_ORG
+   - CF_SPACE=$CF_SPACE
 script: ./Travis_Scripts/cf_setups.sh
