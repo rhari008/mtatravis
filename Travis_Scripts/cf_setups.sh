@@ -37,6 +37,6 @@ pushd `dirname $0` > /dev/null
 SCRIPTPATH=`pwd`
 popd > /dev/null
 
-sudo $SCRIPTPATH/cf_mta_deploy
+sudo $SCRIPTPATH/cf_mta_deploy.sh
 
 # CF Performing Blue green deployment
