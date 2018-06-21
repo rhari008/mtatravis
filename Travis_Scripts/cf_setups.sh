@@ -37,10 +37,10 @@ echo $CF_SPACE
 echo $CF_USERNAME
 echo $CF_PASSWORD
 
-cf api $CF_api
-cf login -u $CF_USERNAME -p $CF_PASSWORD -o $CF_ORG -s $CF_SPACE
+sudo cf api $CF_api
+sudo cf login -u $CF_USERNAME -p $CF_PASSWORD -o $CF_ORG -s $CF_SPACE
 
 #CF Deploy the built MTAR file
 
-cf deploy samplehtml.mtar
+sudo cf deploy samplehtml.mtar
 
