@@ -29,6 +29,7 @@ echo "********* MTA Build done *********"
 echo "********* Ready to perform deployment *********"
 
 # CF login
+sudo chmod 777 /home/travis/.cf/config.json  # Fix for the CF read
 
 echo $CF_API 
 echo $CF_ORG
