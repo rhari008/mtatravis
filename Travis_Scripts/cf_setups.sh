@@ -40,7 +40,7 @@ sudo cf login -u $CF_USERNAME -p $CF_PASSWORD -o $CF_ORG -s $CF_SPACE
 
 BLUE=UI5Module
 
-GREEN="${BLUE}-B"
+GREEN="${BLUE}-G"
 
 sudo sed -i -e "s/: ${BLUE}/: ${GREEN}/g" UI5Module/package.json
 
