@@ -13,10 +13,12 @@ echo "********* MTA Archive builder downloaded *********"
 
 CURRENTPATH=$(pwd)
 
+ls $CURRENTPATH
+
 java -jar $CURRENTPATH/MTASampleHTML/lib/mta_archive_builder-1.1.0.jar --build-target=CF --mtar=samplehtml.mtar build
 
 echo "********* MTA Build done *********"
 
 echo "********* Ready to perform deployment *********"
 
-sudo cf deploy samplehtml.mtar
+sudo cf deploy samplehtml.mtar $1

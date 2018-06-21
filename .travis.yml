@@ -17,4 +17,4 @@ env:
    - CF_PASSWORD=$CF_PASSWORD
    - CF_ORG=$CF_ORG
    - CF_SPACE=$CF_SPACE
-script: ./Travis_Scripts/cf_setups.sh
+script: ./Travis_Scripts/cf_setups.sh UI5Module #Name of the application
