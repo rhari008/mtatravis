@@ -9,11 +9,11 @@ set -x
 
 echo "********* MTA Archive builder downloaded *********"
 
-pwd
-ls
-ls MTASampleHTML/lib
+# Get path to script directory: http://stackoverflow.com/a/4774063
 
-java -jar MTASampleHTML/lib/mta_archive_builder-1.1.0.jar --build-target=CF --mtar=samplehtml.mtar build
+CURRENTPATH=$(pwd)
+
+java -jar $SCURRENTPATH/MTASampleHTML/lib/mta_archive_builder-1.1.0.jar --build-target=CF --mtar=samplehtml.mtar build
 
 echo "********* MTA Build done *********"
 
