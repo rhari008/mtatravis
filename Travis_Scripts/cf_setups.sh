@@ -23,8 +23,8 @@ echo "********* MTA Build done *********"
 
 ls
 
-wget "https://tools.hana.ondemand.com/additional/cfcliplugin/cf-cli-mta-plugin-2.0.3-linux-x86_64.bin"
+wget "https://tools.hana.ondemand.com/additional/cfcliplugin/cf-cli-mta-plugin-2.0.3-linux-x86_64.bin" -o "mtaplugin.bin"
 
-chmod a+x cf-cli-mta-plugin-2.0.3-linux-x86_64.bin
+chmod a+x mtaplugin.bin
 
-sudo ./cf-cli-mta-plugin-2.0.3-linux-x86_64.bin
+sudo ./mtaplugin.bin
