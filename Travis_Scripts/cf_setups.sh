@@ -40,11 +40,14 @@ echo ${BLUE}
 
 GREEN="${BLUE}-G"
 
+echo ${GREEN}
+
+echo "sudo sed -i -e \"s/: ${BLUE}/: ${GREEN}/g\" UI5Module/package.json"
+
 sudo sed -i -e "s/: ${BLUE}/: ${GREEN}/g" UI5Module/package.json
 
 vi UI5Module/package.json
 
-echo ${GREEN}
 
 #MTA Builder
 
