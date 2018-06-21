@@ -43,7 +43,7 @@ GREEN="${BLUE}-G"
 echo ${GREEN}
 
 
-sudo sed -i -e "s/${BLUE}/${GREEN}/g" UI5Module/package.json
+sudo sed -i -e "s/${BLUE}/${GREEN}/g" UI5Module/webapp/manifest.json
 
 
 #MTA Builder
