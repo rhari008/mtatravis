@@ -32,6 +32,11 @@ sudo cf api $CF_API
 sudo cf login -u $CF_USERNAME -p $CF_PASSWORD -o $CF_ORG -s $CF_SPACE
 
 # CF deploy
-sudo ./cf_mta_deploy
+# Get path to script directory: http://stackoverflow.com/a/4774063
+pushd `dirname $0` > /dev/null
+SCRIPTPATH=`pwd`
+popd > /dev/null
+
+sudo $SCRIPTPATH/cf_mta_deploy
 
 # CF Performing Blue green deployment
