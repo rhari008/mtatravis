@@ -25,11 +25,7 @@ sudo cf plugins
 # CF login
 sudo chmod 777 /home/travis/.cf/config.json  # Fix for the CF read
 
-echo $CF_API 
-echo $CF_ORG
-echo $CF_SPACE
-echo $CF_USERNAME
-echo $CF_PASSWORD
+
 
 sudo cf api $CF_API
 
@@ -40,9 +36,13 @@ sudo cf login -u $CF_USERNAME -p $CF_PASSWORD -o $CF_ORG -s $CF_SPACE
 
 BLUE="UI5Module"
 
+echo ${BLUE}
+
 GREEN="${BLUE}-G"
 
 sudo sed -i -e "s/: ${BLUE}/: ${GREEN}/g" UI5Module/package.json
+
+echo ${GREEN}
 
 #MTA Builder
 
