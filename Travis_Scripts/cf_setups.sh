@@ -19,6 +19,10 @@ wget "https://tools.hana.ondemand.com/additional/mta_archive_builder-1.1.0.jar" 
 
 ls 
 
+echo "Java version"
+
+java --version
+
 echo "********* MTA Archive builder downloaded *********"
 
 java -jar mta.jar --build-target=CF --mtar=samplehtml.mtar
