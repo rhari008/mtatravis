@@ -17,6 +17,16 @@ echo "********* Installation of Cloud Foundry Command Line Interface completed *
 
 ls 
 
+echo "Downgrade node version"
+
+node --version
+
+sudo npm cache clean -f
+sudo npm install -g n
+sudo n 6.10.1
+
+node --version
+
 echo "Java version"
 
 java -version
